@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aisha Okete Zulkifl | Customer Service & Support</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0F172A;
+    --blue: #2563EB;
+    --blue-light: #DBEAFE;
+    --gold: #F59E0B;
+    --white: #FFFFFF;
+    --gray-100: #F8FAFC;
+    --gray-200: #E2E8F0;
+    --gray-500: #64748B;
+    --gray-700: #334155;
+    --radius: 12px;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--navy);
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 0 2rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--blue); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--gray-500);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--blue); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .hero::before { display: none; }
+  .hero::after { display: none; }
+  .hero-content { position: relative; z-index: 1; max-width: 700px; }
+  .hero-badge {
+    display: inline-block;
+    background: var(--blue-light);
+    border: 1px solid var(--gray-200);
+    color: var(--blue);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .hero h1 span { color: var(--blue); }
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--gray-500);
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+  .hero-tag {
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    color: var(--gray-700);
+    padding: 0.4rem 1rem;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--blue);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(37,99,235,0.25);
+  }
+  .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,99,235,0.35); }
+
+  /* VISA BADGE */
+  .visa-strip {
+    background: #F59E0B;
+    border-top: none;
+    border-bottom: none;
+    color: #1a1a1a;
+    text-align: center;
+    padding: 0.85rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .visa-strip span { color: rgba(0,0,0,0.3); font-weight: 300; margin: 0 0.75rem; }
+
+  /* SECTIONS */
+  section { padding: 5rem 2rem; }
+  .container { max-width: 1000px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--navy);
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .section-sub {
+    color: var(--gray-500);
+    font-size: 1rem;
+    max-width: 560px;
+    margin-bottom: 3rem;
+  }
+
+  /* ABOUT */
+  .about { background: var(--gray-100); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .about-text p {
+    color: var(--gray-700);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .stat-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--blue);
+    font-family: 'Playfair Display', serif;
+  }
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--gray-500);
+    margin-top: 0.25rem;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .skill-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .skill-card:hover {
+    border-color: var(--blue);
+    box-shadow: 0 4px 20px rgba(37,99,235,0.1);
+  }
+  .skill-icon {
+    width: 44px; height: 44px;
+    background: var(--blue-light);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  .skill-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .skill-card p {
+    font-size: 0.875rem;
+    color: var(--gray-500);
+    line-height: 1.6;
+  }
+
+  /* EXPERIENCE */
+  .experience { background: var(--gray-100); }
+  .exp-list { display: flex; flex-direction: column; gap: 1.5rem; }
+  .exp-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 2rem;
+    border-left: 4px solid var(--blue);
+  }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .exp-title { font-weight: 700; font-size: 1.05rem; color: var(--navy); }
+  .exp-company { color: var(--blue); font-weight: 600; font-size: 0.9rem; margin-top: 0.2rem; }
+  .exp-date {
+    background: var(--blue-light);
+    color: var(--blue);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  .exp-bullets { list-style: none; margin-top: 1rem; }
+  .exp-bullets li {
+    font-size: 0.9rem;
+    color: var(--gray-700);
+    padding: 0.3rem 0 0.3rem 1.2rem;
+    position: relative;
+    line-height: 1.6;
+  }
+  .exp-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0.75rem;
+    width: 6px; height: 6px;
+    background: var(--blue);
+    border-radius: 50%;
+  }
+
+  /* CERTS */
+  .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .cert-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: border-color 0.2s;
+  }
+  .cert-card:hover { border-color: var(--blue); }
+  .cert-icon {
+    width: 40px; height: 40px;
+    background: var(--blue-light);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .cert-name { font-weight: 600; font-size: 0.9rem; color: var(--navy); margin-bottom: 0.25rem; }
+  .cert-issuer { font-size: 0.8rem; color: var(--gray-500); }
+
+  /* CONTACT */
+  .contact { background: var(--navy); text-align: center; }
+  .contact .section-label { color: var(--gold); }
+  .contact .section-title { color: var(--white); }
+  .contact .section-sub { color: rgba(255,255,255,0.6); margin: 0 auto 2.5rem; }
+  .contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .contact-card {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: var(--radius);
+    padding: 1.25rem 2rem;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s, border-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .contact-card:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* FOOTER */
+  footer {
+    background: #060D1C;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .hero-visa {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  .visa-badge {
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    color: var(--gray-700);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+  }
+
+  @media (max-width: 640px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .exp-header { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Aisha <span>Zulkifl</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Available Immediately in Dubai, UAE</div>
+    <h1>People-First <span>Service</span> Professional</h1>
+    <p class="hero-sub">Customer Service · Sales Support · Call Center · Events Hosting</p>
+    <div class="hero-tags">
+      <span class="hero-tag">📞 Call Center</span>
+      <span class="hero-tag">💬 Live Chat Support</span>
+      <span class="hero-tag">🎉 Events Host</span>
+      <span class="hero-tag">📧 Email Support</span>
+      <span class="hero-tag">🖥️ Remote & On-Site</span>
+    </div>
+    <a href="#contact" class="hero-cta">Get in Touch →</a>
+    <div class="hero-visa">
+      <span class="visa-badge">✅ Own UAE Visa</span>
+      <span class="visa-badge">⚡ Available Immediately</span>
+      <span class="visa-badge">🕐 Full-Time & Part-Time</span>
+      <span class="visa-badge">🔄 Shift-Based</span>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">Reliable. Friendly. Ready to Work.</h2>
+        <p>I'm a Dubai-based recent IT graduate with internship experience in customer-facing helpdesk support and high-pressure live environments. I'm motivated, a fast learner, and ready to bring energy and professionalism to any customer service or support role.</p>
+        <p>Whether it's handling a busy call queue, welcoming guests at an event, or resolving customer issues via email and chat — I show up, I stay calm, and I get it done.</p>
+        <p>I hold my own valid UAE residence visa and am available to start immediately.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Completed Internships in UAE</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Professional Certifications</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">1</div>
+          <div class="stat-label">Degree in IT & Networking</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">✓</div>
+          <div class="stat-label">Own UAE Visa — No Sponsorship Needed</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-label">What I Bring</div>
+    <h2 class="section-title">Skills & Strengths</h2>
+    <p class="section-sub">Everything you need from a customer service professional — without the learning curve.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">📞</div>
+        <h3>Call Handling</h3>
+        <p>Inbound and outbound calls, professional phone manner, calm under pressure, and clear communication at all times.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">💬</div>
+        <h3>Live Chat & Email Support</h3>
+        <p>Fast, accurate, and friendly written responses. Experienced with ticketing systems and high-volume queues.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🎯</div>
+        <h3>Issue Resolution</h3>
+        <p>Skilled at triage, prioritisation, and resolving customer complaints efficiently with a solution-first attitude.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🎉</div>
+        <h3>Events & Guest Hosting</h3>
+        <p>Energetic and engaging host for events, parties, and activities. Great with families, children, and diverse audiences.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📊</div>
+        <h3>Admin & Data Entry</h3>
+        <p>Accurate data entry, record keeping, documentation, and proficiency in Microsoft Office and Google Workspace.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🤝</div>
+        <h3>Sales Support</h3>
+        <p>Lead follow-up, customer journey coordination, showroom reception, and CRM management support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <div class="container">
+    <div class="section-label">Background</div>
+    <h2 class="section-title">Work Experience</h2>
+    <p class="section-sub">Real experience in real environments — under pressure and in front of people.</p>
+    <div class="exp-list">
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">IT Helpdesk Intern</div>
+            <div class="exp-company">Ajman University, UAE</div>
+          </div>
+          <div class="exp-date">Oct 2024 – Nov 2024</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Handled high volumes of daily customer requests from staff and students, resolving issues efficiently and professionally</li>
+          <li>Managed inbound tickets, triaged by severity, and escalated where needed while keeping customers informed throughout</li>
+          <li>Consistently met SLA targets while balancing multiple cases simultaneously in a busy environment</li>
+          <li>Maintained structured documentation and a knowledge base to improve service quality and response times</li>
+        </ul>
+      </div>
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-title">IT Support Intern</div>
+            <div class="exp-company">Sharjah Government Media Bureau, UAE</div>
+          </div>
+          <div class="exp-date">May 2024 – Sept 2024</div>
+        </div>
+        <ul class="exp-bullets">
+          <li>Delivered real-time support during live broadcast events — a high-stakes, zero-tolerance environment requiring full professionalism</li>
+          <li>Communicated clearly with senior team members under strict time pressure and operational deadlines</li>
+          <li>Demonstrated consistent reliability, responsibility, and a strong team-player attitude throughout</li>
+          <li>Maintained a positive and composed presence even in the most demanding situations</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certs">
+  <div class="container">
+    <div class="section-label">Credentials</div>
+    <h2 class="section-title">Education & Certifications</h2>
+    <p class="section-sub">Qualified, certified, and continuously learning.</p>
+    <div class="certs-grid">
+      <div class="cert-card">
+        <div class="cert-icon">🎓</div>
+        <div>
+          <div class="cert-name">B.Sc. Information Technology, Networking & Security</div>
+          <div class="cert-issuer">Ajman University, UAE — Graduated May 2025</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🏅</div>
+        <div>
+          <div class="cert-name">Technical Support Fundamentals</div>
+          <div class="cert-issuer">Google — Customer Support, Communication & Troubleshooting</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">☁️</div>
+        <div>
+          <div class="cert-name">Cloud and Wireless Security</div>
+          <div class="cert-issuer">ISC2 — 2024</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🔐</div>
+        <div>
+          <div class="cert-name">Certified Ethical Hacker v12</div>
+          <div class="cert-issuer">EC-Council — 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-label">Let's Connect</div>
+    <h2 class="section-title">Available to Start Now</h2>
+    <p class="section-sub">Open to full-time, part-time, and shift-based roles across Dubai and the UAE. Own valid visa — no sponsorship required.</p>
+    <div class="contact-cards">
+      <a href="mailto:aishazulkif@gmail.com" class="contact-card">📧 aishazulkif@gmail.com</a>
+      <a href="tel:+971561230782" class="contact-card">📞 +971 56 123 0782</a>
+      <a href="https://linkedin.com/in/aishazulkifl" target="_blank" class="contact-card">💼 LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Aisha Okete Zulkifl — Dubai, UAE
+</footer>
+
+</body>
+</html>
